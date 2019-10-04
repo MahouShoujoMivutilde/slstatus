@@ -63,7 +63,8 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ ram_used, " %s | ",  NULL},
-	{ keymap,   " %s | ",  NULL},
-	{ datetime, " %s ",  "%H:%M (%A) %d %b %Y" },
+	{ ram_used,    " %s | ",  NULL},
+	{ run_command, "%s| ",  "amixer get Master | grep -o '[0-9]*%\\|\\[on\\]\\|\\[off\\]' | sed 's#\\[on\\]##;s#\\[off\\]##' | sort -u | tr '\\n' ' '" },
+	{ keymap,      " %s | ",  NULL},
+	{ datetime,    " %s ",  "%H:%M (%A) %d %b %Y" },
 };
